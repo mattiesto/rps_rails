@@ -12,9 +12,14 @@ class GameController < ApplicationController
     # In the end, make sure you assign the correct values to the
     #   following two variables:
 
-    @computer_move = "Replace this string with the correct value."
+    @computer_move = ["rock", "paper", "scissors"]
+    if @user_move == @computer_move
+    @result = "tied"
+  elsif @user_move == "paper" && @computer_move == "rock" || @user_move == "rock" && @computer_move == "scissors" || @user_move == "scissors" && @computer_move == "paper"
+    @result = "win"
+  else @user_move == "paper" && @computer_move == "scissors" || @user_move == "rock" && @computer_move == "paper" || @user_move == "scissors" && @computer_move == "rock"
+    @result = "lose"
 
-    @result = "Replace this string with the correct value."
 
     # ===============================================================
     # Your code goes above.
